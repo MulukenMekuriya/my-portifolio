@@ -56,8 +56,16 @@ export const projects: Project[] = [
     statusColor: "blue",
     featured: true,
     links: [
-      { label: "GitHub", href: "#", icon: "github" },
-      { label: "Live Demo", href: "#", icon: "external" },
+      {
+        label: "GitHub",
+        href: "https://github.com/MulukenMekuriya/structprep",
+        icon: "github",
+      },
+      {
+        label: "Live Demo",
+        href: "https://structprep.vercel.app/",
+        icon: "external",
+      },
     ],
   },
   {
@@ -78,7 +86,11 @@ export const projects: Project[] = [
     status: "Paper Trading Phase",
     statusColor: "amber",
     links: [
-      { label: "GitHub", href: "#", icon: "github" },
+      {
+        label: "GitHub",
+        href: "https://github.com/MulukenMekuriya/TWS-Bot",
+        icon: "github",
+      },
       { label: "Architecture Doc", href: "#", icon: "doc" },
     ],
   },
@@ -93,8 +105,16 @@ export const projects: Project[] = [
     statusColor: "green",
     role: "Founder & CEO",
     links: [
-      { label: "GitHub", href: "#", icon: "github" },
-      { label: "Website", href: "#", icon: "external" },
+      {
+        label: "GitHub",
+        href: "https://github.com/MulukenMekuriya/Tranzit",
+        icon: "github",
+      },
+      {
+        label: "Website",
+        href: "https://www.tolofreight.com/",
+        icon: "external",
+      },
     ],
   },
   {
@@ -123,7 +143,13 @@ export const projects: Project[] = [
     tech: ["Python", "Claude API", "Suno AI", "HTML5 Canvas", "YouTube API"],
     status: "Active — Publishing Content",
     statusColor: "green",
-    links: [{ label: "YouTube Channel", href: "#", icon: "youtube" }],
+    links: [
+      {
+        label: "YouTube Channel",
+        href: "https://www.youtube.com/@HopeStudioEthiopia",
+        icon: "youtube",
+      },
+    ],
   },
 ];
 
