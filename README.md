@@ -152,4 +152,4 @@ MIT — free to use as inspiration. Update all personal content in `lib/data.ts`
 
 ---
 
-*Built by Muluken Mekuriya · [mulukenmekuriya@gmail.com](mailto:mulukenmekuriya@gmail.com)*
+*Built by Muluken Mekuriya · [mulerthegrete@gmail.com](mailto:mulerthegrete@gmail.com)*

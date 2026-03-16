@@ -230,7 +230,7 @@ export default function Navigation() {
               className="pb-8 text-center text-xs"
               style={{ color: "var(--muted)", fontFamily: "var(--font-space-mono)" }}
             >
-              mulukenmekuriya@gmail.com
+              mulerthegrete@gmail.com
             </div>
           </motion.div>
         )}

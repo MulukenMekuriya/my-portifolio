@@ -5,7 +5,7 @@ import { Mail, Linkedin, Github } from "lucide-react";
 const LINKS = [
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/mulukenmekuriya" },
   { icon: Github, label: "GitHub", href: "https://github.com/MulukenMekuriya" },
-  { icon: Mail, label: "Email", href: "mailto:mulukenmekuriya@gmail.com" },
+  { icon: Mail, label: "Email", href: "mailto:mulerthegrete@gmail.com" },
 ];
 
 const NAV_LINKS = [

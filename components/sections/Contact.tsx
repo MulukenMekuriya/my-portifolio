@@ -8,8 +8,8 @@ const CONTACT_ITEMS = [
   {
     icon: Mail,
     label: "Email",
-    value: "mulukenmekuriya@gmail.com",
-    href: "mailto:mulukenmekuriya@gmail.com",
+    value: "mulerthegrete@gmail.com",
+    href: "mailto:mulerthegrete@gmail.com",
     description: "Best for direct outreach",
   },
   {
@@ -206,7 +206,7 @@ export default function Contact() {
 
               {/* Primary CTA */}
               <motion.a
-                href="mailto:mulukenmekuriya@gmail.com"
+                href="mailto:mulerthegrete@gmail.com"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-semibold text-white no-underline transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/20"
