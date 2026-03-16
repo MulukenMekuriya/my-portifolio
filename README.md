@@ -1,36 +1,155 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Muluken Mekuriya — Portfolio Website
+
+> Senior AI Software Engineer · DoD Cleared · 9+ Years Federal Contracting
+
+A production-ready personal portfolio built with Next.js 15, Tailwind CSS v4, and Framer Motion. Designed to communicate senior-level AI engineering expertise, federal domain knowledge, and entrepreneurial range to recruiters, hiring managers, and federal contracting decision-makers.
+
+**Live site:** [mulukenmekuriya.dev](https://mulukenmekuriya.dev) *(update when deployed)*
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 15 (App Router, TypeScript) |
+| Styling | Tailwind CSS v4 (CSS-first config) |
+| Animations | Framer Motion v12 |
+| Fonts | Bebas Neue · Sora · DM Sans · Space Mono |
+| Icons | Lucide React |
+| Deployment | Vercel (or Netlify / GitHub Pages) |
+
+---
+
+## Project Structure
+
+```
+├── app/
+│   ├── globals.css          # Tailwind v4 theme + CSS variables
+│   ├── layout.tsx           # Root layout (fonts, metadata, OG tags)
+│   └── page.tsx             # Main page (section assembly)
+├── components/
+│   ├── sections/
+│   │   ├── Hero.tsx         # Full-viewport hero with terminal animation
+│   │   ├── About.tsx        # Bio, photo placeholder, highlight cards
+│   │   ├── Projects.tsx     # Featured grid + project cards
+│   │   ├── Experience.tsx   # Dual timeline (professional + founder)
+│   │   ├── Skills.tsx       # Categorized skill badges
+│   │   ├── Education.tsx    # Education + certifications
+│   │   └── Contact.tsx      # Contact cards + CTA
+│   ├── ui/
+│   │   ├── Navigation.tsx   # Sticky header + mobile overlay menu
+│   │   ├── Footer.tsx       # Footer with links
+│   │   ├── ThemeProvider.tsx # Dark/light theme context
+│   │   └── AnimatedSection.tsx # Scroll-reveal wrappers
+│   └── KonamiEgg.tsx        # Ethiopian flag easter egg (↑↑↓↓←→←→BA)
+├── lib/
+│   └── data.ts              # All portfolio content (projects, experience, skills)
+├── public/
+│   └── resume.pdf           # ← Add your resume PDF here
+├── .env.example             # Environment variable documentation
+└── README.md
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.17+ or 20+
+- npm or pnpm
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/MulukenMekuriya/portfolio.git
+cd muluken-portfolio
+
+# Install dependencies
+npm install
+
+# Copy environment variables (optional)
+cp .env.example .env.local
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configuration
 
-## Learn More
+### Adding Your Resume
 
-To learn more about Next.js, take a look at the following resources:
+Place your resume PDF at `public/resume.pdf`. The "Download Resume" buttons throughout the site link to `/resume.pdf`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Updating Content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+All portfolio content lives in `lib/data.ts`:
 
-## Deploy on Vercel
+- **Projects** — Edit the `projects` array to update project details, links, and tech stacks
+- **Experience** — Edit the `experiences` array for work history
+- **Skills** — Edit `skillCategories` to add/remove skills
+- **Stats** — Edit the `stats` array for the hero ticker
+- **Education** — Edit `education` and `certifications` arrays
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Adding a Real Photo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+In `components/sections/About.tsx`, replace the `<div>` placeholder with:
+
+```tsx
+import Image from "next/image";
+
+<Image
+  src="/photo.jpg"
+  alt="Muluken Mekuriya"
+  fill
+  className="object-cover object-top"
+  priority
+/>
+```
+
+Place your photo at `public/photo.jpg`.
+
+### Analytics
+
+Uncomment the analytics script placeholder in `app/layout.tsx` and configure your provider in `.env.local`.
+
+---
+
+## Deployment
+
+### Vercel (Recommended)
+
+```bash
+npm install -g vercel
+vercel
+```
+
+Or connect your GitHub repo at [vercel.com](https://vercel.com) for automatic deployments.
+
+### Static Export
+
+Add `output: 'export'` to `next.config.ts`, then `npm run build` deploys the `out/` directory to any static host.
+
+---
+
+## Easter Egg
+
+Type the Konami Code anywhere on the site: **↑ ↑ ↓ ↓ ← → ← → B A**
+
+The Ethiopian flag flashes briefly on screen.
+
+---
+
+## License
+
+MIT — free to use as inspiration. Update all personal content in `lib/data.ts` if forking.
+
+---
+
+*Built by Muluken Mekuriya · [mulukenmekuriya@gmail.com](mailto:mulukenmekuriya@gmail.com)*
