@@ -8,7 +8,11 @@ export type Project = {
   tech: string[];
   status: string;
   statusColor: "green" | "blue" | "amber" | "purple";
-  links: { label: string; href: string; icon: "github" | "external" | "doc" | "youtube" }[];
+  links: {
+    label: string;
+    href: string;
+    icon: "github" | "external" | "doc" | "youtube";
+  }[];
   featured?: boolean;
   role?: string;
 };
@@ -38,7 +42,16 @@ export const projects: Project[] = [
     subtitle: "AI-Powered Exam Prep Platform with RAG Engine",
     description:
       "A SaaS platform that uses Retrieval-Augmented Generation to provide intelligent, context-aware answers to professional exam questions. Upload reference materials and get instant, accurate answers grounded in your study content — powered by vector search and LLM orchestration.",
-    tech: ["Next.js 15", "Supabase", "pgvector", "Claude API", "Voyage AI", "TypeScript", "Tailwind CSS", "Drizzle ORM"],
+    tech: [
+      "Next.js 15",
+      "Supabase",
+      "pgvector",
+      "Claude API",
+      "Voyage AI",
+      "TypeScript",
+      "Tailwind CSS",
+      "Drizzle ORM",
+    ],
     status: "Phase 1 Complete — Phase 2 In Progress",
     statusColor: "blue",
     featured: true,
@@ -53,7 +66,15 @@ export const projects: Project[] = [
     subtitle: "Algorithmic Trading System with AI Decision Pipeline",
     description:
       "A 4-strategy trading ensemble (Momentum, Mean Reversion, Breakout, PEAD) powered by a 10-agent AI decision pipeline. Each trade signal passes through specialized agents for regime classification, sentiment analysis, and risk assessment before execution.",
-    tech: ["Python", "Qwen/DashScope", "IBKR TWS API", "InfluxDB", "Grafana", "asyncio", "pandas"],
+    tech: [
+      "Python",
+      "Qwen/DashScope",
+      "IBKR TWS API",
+      "InfluxDB",
+      "Grafana",
+      "asyncio",
+      "pandas",
+    ],
     status: "Paper Trading Phase",
     statusColor: "amber",
     links: [
@@ -82,12 +103,16 @@ export const projects: Project[] = [
     subtitle: "Fleet Management with AI Agent Workforce",
     description:
       "A fleet management system powered by autonomous AI agents handling dispatch, maintenance scheduling, customer operations, and pricing optimization. 10 specialized agents collaborate to run operations with minimal human intervention.",
-    tech: ["Next.js", "Supabase", "Multi-Agent Orchestration", "Claude API", "TypeScript"],
+    tech: [
+      "Next.js",
+      "Supabase",
+      "Multi-Agent Orchestration",
+      "Claude API",
+      "TypeScript",
+    ],
     status: "In Development",
     statusColor: "purple",
-    links: [
-      { label: "GitHub", href: "#", icon: "github" },
-    ],
+    links: [{ label: "GitHub", href: "#", icon: "github" }],
   },
   {
     id: "hope-studio",
@@ -98,9 +123,7 @@ export const projects: Project[] = [
     tech: ["Python", "Claude API", "Suno AI", "HTML5 Canvas", "YouTube API"],
     status: "Active — Publishing Content",
     statusColor: "green",
-    links: [
-      { label: "YouTube Channel", href: "#", icon: "youtube" },
-    ],
+    links: [{ label: "YouTube Channel", href: "#", icon: "youtube" }],
   },
 ];
 
@@ -108,17 +131,25 @@ export const projects: Project[] = [
 export const experiences: Experience[] = [
   {
     id: "dod-afmed",
-    title: "Software Engineer (Contractor)",
+    title: "AI-Enabled Software Engineer (Contractor)",
     company: "U.S. Department of Defense — Air Force Medical Logistics (AFMED)",
     date: "Apr 2023 – Present",
     type: "professional",
     highlights: [
-      "Led migration of multiple enterprise applications from Sencha Ext JS to React TypeScript, improving system performance, maintainability, and developer velocity",
-      "Designed and built RESTful APIs and SQL stored procedures powering critical logistics workflows supporting U.S. military medical supply chains",
-      "Implemented role-based access control (RBAC) and structured reporting systems for high-security, compliance-driven, zero-downtime environments",
-      "Triaged and resolved production issues in a mission-critical system with strict uptime and audit requirements",
+      "Design, develop, and maintain AI-enhanced enterprise applications and RESTful APIs supporting mission-critical Air Force Medical Logistics systems serving thousands of military personnel.",
+      "Led enterprise modernization from Sencha Ext JS to React TypeScript, integrating AI-assisted development workflows and improving system performance, maintainability, and developer velocity",
+      "Engineered role-based access control (RBAC) systems and structured reporting features aligned with DoD security standards and compliance requirements",
+      "Resolved high-priority production issues in mission-critical government environments with stringent uptime and security standards",
+      "Collaborated with government program managers and cross-functional teams to deliver features on schedule within federal acquisition frameworks",
     ],
-    tech: ["React TypeScript", "C#/.NET", "SQL Server", "REST APIs", "RBAC", "FISMA"],
+    tech: [
+      "React TypeScript",
+      "C#/.NET",
+      "SQL Server",
+      "REST APIs",
+      "RBAC",
+      "FISMA",
+    ],
   },
   {
     id: "dol",
@@ -127,11 +158,18 @@ export const experiences: Experience[] = [
     date: "Feb 2022 – Jan 2023",
     type: "professional",
     highlights: [
-      "Architected and built a new backend API using ASP.NET to replace a legacy system, improving performance and long-term maintainability",
-      "Delivered accessible, compliant frontend features meeting federal Section 508 and WCAG standards",
-      "Integrated AngularJS and Drupal CMS to fulfill agency-specific security and content management requirements",
+      "Modernized a key agency web application by developing a new backend API using ASP.NET, improving performance and maintainability.",
+      "Built web features with JavaScript, HTML, and CSS while ensuring compliance with federal accessibility and security standards.",
+      "Utilized Angular JS and Drupal to meet specific agency security requirements and content management needs.",
     ],
-    tech: ["ASP.NET", "AngularJS", "JavaScript", "Drupal", "SQL Server", "Section 508"],
+    tech: [
+      "ASP.NET",
+      "AngularJS",
+      "JavaScript",
+      "Drupal",
+      "SQL Server",
+      "Section 508",
+    ],
   },
   {
     id: "wsp",
@@ -171,7 +209,15 @@ export const experiences: Experience[] = [
       "Designed multi-tenant data architecture with role-based access, secure API routes, and scalable question bank seeding (80+ questions)",
       "Implemented real-time session flow, performance analytics dashboards, and bulk import pipelines for structured exam content",
     ],
-    tech: ["Next.js 15", "Supabase", "pgvector", "Claude API", "Voyage AI", "TypeScript", "Drizzle ORM"],
+    tech: [
+      "Next.js 15",
+      "Supabase",
+      "pgvector",
+      "Claude API",
+      "Voyage AI",
+      "TypeScript",
+      "Drizzle ORM",
+    ],
   },
   {
     id: "tws-founder",
@@ -185,7 +231,15 @@ export const experiences: Experience[] = [
       "Implemented anomaly detection, predictive trend analysis, and intelligent risk management logic integrating ML model outputs into live trading decisions",
       "Stress-tested across historical market regimes; benchmarked against hedge fund industry metrics before moving to paper trading",
     ],
-    tech: ["Python", "Qwen/DashScope", "IBKR TWS API", "InfluxDB", "Grafana", "asyncio", "pandas"],
+    tech: [
+      "Python",
+      "Qwen/DashScope",
+      "IBKR TWS API",
+      "InfluxDB",
+      "Grafana",
+      "asyncio",
+      "pandas",
+    ],
   },
   {
     id: "tolo-founder",
@@ -209,9 +263,16 @@ export const skillCategories: SkillCategory[] = [
     label: "AI / Machine Learning",
     icon: "brain",
     skills: [
-      "Claude API", "OpenAI API", "Voyage AI Embeddings", "Qwen/DashScope",
-      "RAG Pipelines", "pgvector", "Multi-Agent Systems", "LLM Orchestration",
-      "Vector Search", "Prompt Engineering",
+      "Claude API",
+      "OpenAI API",
+      "Voyage AI Embeddings",
+      "Qwen/DashScope",
+      "RAG Pipelines",
+      "pgvector",
+      "Multi-Agent Systems",
+      "LLM Orchestration",
+      "Vector Search",
+      "Prompt Engineering",
     ],
   },
   {
@@ -219,8 +280,14 @@ export const skillCategories: SkillCategory[] = [
     label: "Frontend",
     icon: "monitor",
     skills: [
-      "React (TypeScript)", "Next.js 15", "Tailwind CSS", "Framer Motion",
-      "Material UI", "HTML5", "CSS3", "AngularJS",
+      "React (TypeScript)",
+      "Next.js 15",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Material UI",
+      "HTML5",
+      "CSS3",
+      "AngularJS",
     ],
   },
   {
@@ -228,8 +295,13 @@ export const skillCategories: SkillCategory[] = [
     label: "Backend",
     icon: "server",
     skills: [
-      "Node.js (TypeScript)", "Python", "C#/.NET", "ASP.NET MVC",
-      "Express", "RESTful APIs", "Drizzle ORM",
+      "Node.js (TypeScript)",
+      "Python",
+      "C#/.NET",
+      "ASP.NET MVC",
+      "Express",
+      "RESTful APIs",
+      "Drizzle ORM",
     ],
   },
   {
@@ -237,8 +309,13 @@ export const skillCategories: SkillCategory[] = [
     label: "Data & Infrastructure",
     icon: "database",
     skills: [
-      "PostgreSQL", "Supabase", "SQL Server", "InfluxDB",
-      "Drizzle ORM", "DynamoDB", "pgvector",
+      "PostgreSQL",
+      "Supabase",
+      "SQL Server",
+      "InfluxDB",
+      "Drizzle ORM",
+      "DynamoDB",
+      "pgvector",
     ],
   },
   {
@@ -246,8 +323,14 @@ export const skillCategories: SkillCategory[] = [
     label: "Cloud & DevOps",
     icon: "cloud",
     skills: [
-      "AWS Lambda", "AWS S3", "AWS DynamoDB", "AWS CDK",
-      "GitHub Actions", "Docker", "Vercel", "Grafana",
+      "AWS Lambda",
+      "AWS S3",
+      "AWS DynamoDB",
+      "AWS CDK",
+      "GitHub Actions",
+      "Docker",
+      "Vercel",
+      "Grafana",
     ],
   },
   {
@@ -255,8 +338,12 @@ export const skillCategories: SkillCategory[] = [
     label: "Compliance & Security",
     icon: "shield",
     skills: [
-      "FISMA", "RBAC", "Section 508 Accessibility",
-      "DoD Public Trust Clearance", "WCAG 2.1", "Zero-Downtime Deployments",
+      "FISMA",
+      "RBAC",
+      "Section 508 Accessibility",
+      "DoD Public Trust Clearance",
+      "WCAG 2.1",
+      "Zero-Downtime Deployments",
     ],
   },
 ];
