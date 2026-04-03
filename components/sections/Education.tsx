@@ -1,6 +1,7 @@
 "use client";
 
-import { GraduationCap, Award, Clock } from "lucide-react";
+import { GraduationCap, Award, Clock, CheckCircle } from "lucide-react";
+import Script from "next/script";
 import AnimatedSection, { StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 import { education, certifications } from "@/lib/data";
 
@@ -120,65 +121,84 @@ export default function Education() {
             </AnimatedSection>
 
             <StaggerContainer className="space-y-4" staggerDelay={0.12}>
-              {certifications.map((cert) => (
-                <StaggerItem key={cert.name}>
-                  <div
-                    className="card-base p-6 group"
-                    role="article"
-                  >
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-3 flex-1">
-                        <div
-                          className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
-                          style={{
-                            background: "rgba(245,158,11,0.1)",
-                            border: "1px solid rgba(245,158,11,0.2)",
-                          }}
-                          aria-hidden="true"
-                        >
-                          <Clock size={15} style={{ color: "#f59e0b" }} />
-                        </div>
-                        <div>
-                          <p
-                            className="font-semibold text-sm"
-                            style={{ color: "var(--head)", fontFamily: "var(--font-sora)" }}
-                          >
-                            {cert.name}
-                          </p>
-                          <p
-                            className="text-xs mt-0.5"
-                            style={{ color: "var(--muted)", fontFamily: "var(--font-space-mono)" }}
-                          >
-                            Target: {cert.target}
-                          </p>
-                        </div>
-                      </div>
-                      <span
-                        className="shrink-0 px-2.5 py-1 rounded-full text-xs"
-                        style={{
-                          background: "rgba(245,158,11,0.1)",
-                          color: "#fbbf24",
-                          fontFamily: "var(--font-space-mono)",
-                          border: "1px solid rgba(245,158,11,0.2)",
-                        }}
-                      >
-                        {cert.status}
-                      </span>
-                    </div>
-                  </div>
-                </StaggerItem>
-              ))}
+              {certifications.map((cert) => {
+                const earned = cert.status === "Earned";
+                const iconColor = earned ? "#10b981" : "#f59e0b";
+                const bgColor = earned ? "rgba(16,185,129,0.1)" : "rgba(245,158,11,0.1)";
+                const borderColor = earned ? "rgba(16,185,129,0.2)" : "rgba(245,158,11,0.2)";
+                const badgeColor = earned ? "#34d399" : "#fbbf24";
 
-              {/* AWS note */}
-              <StaggerItem>
-                <p
-                  className="text-xs pt-2 pl-1"
-                  style={{ color: "var(--dim)", fontFamily: "var(--font-space-mono)" }}
-                >
-                  Actively studying · Exam registration in progress
-                </p>
-              </StaggerItem>
+                return (
+                  <StaggerItem key={cert.name}>
+                    <div className="card-base p-6 group" role="article">
+                      {/* Badge embed for earned certs */}
+                      {"badgeId" in cert && cert.badgeId && (
+                        <div className="flex justify-center mb-4">
+                          <a
+                            href={(cert as { badgeUrl?: string }).badgeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`View ${cert.name} badge on Credly`}
+                          >
+                            <div
+                              data-iframe-width="150"
+                              data-iframe-height="270"
+                              data-share-badge-id={cert.badgeId}
+                              data-share-badge-host="https://www.credly.com"
+                            />
+                          </a>
+                        </div>
+                      )}
+
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="flex items-center gap-3 flex-1">
+                          <div
+                            className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                            style={{ background: bgColor, border: `1px solid ${borderColor}` }}
+                            aria-hidden="true"
+                          >
+                            {earned
+                              ? <CheckCircle size={15} style={{ color: iconColor }} />
+                              : <Clock size={15} style={{ color: iconColor }} />
+                            }
+                          </div>
+                          <div>
+                            <p
+                              className="font-semibold text-sm"
+                              style={{ color: "var(--head)", fontFamily: "var(--font-sora)" }}
+                            >
+                              {cert.name}
+                            </p>
+                            <p
+                              className="text-xs mt-0.5"
+                              style={{ color: "var(--muted)", fontFamily: "var(--font-space-mono)" }}
+                            >
+                              {"issued" in cert ? `Issued: ${cert.issued}` : `Target: ${(cert as { target?: string }).target}`}
+                            </p>
+                          </div>
+                        </div>
+                        <span
+                          className="shrink-0 px-2.5 py-1 rounded-full text-xs"
+                          style={{
+                            background: bgColor,
+                            color: badgeColor,
+                            fontFamily: "var(--font-space-mono)",
+                            border: `1px solid ${borderColor}`,
+                          }}
+                        >
+                          {cert.status}
+                        </span>
+                      </div>
+                    </div>
+                  </StaggerItem>
+                );
+              })}
             </StaggerContainer>
+
+            <Script
+              src="//cdn.credly.com/assets/utilities/embed.js"
+              strategy="lazyOnload"
+            />
           </div>
         </div>
       </div>

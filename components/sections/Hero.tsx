@@ -8,10 +8,27 @@ import { stats } from "@/lib/data";
 /* ─── Terminal Typing Animation ─── */
 const TERMINAL_LINES = [
   { prompt: "~", cmd: "whoami", output: "muluken.mekuriya" },
-  { prompt: "~", cmd: "cat clearance.txt", output: "DoD Public Trust — Active" },
-  { prompt: "~", cmd: "ls ai-systems/", output: "rag-pipeline/  multi-agent/  vector-search/  llm-orchestration/" },
-  { prompt: "~", cmd: "python run_trading_bot.py", output: "[AI] 10 agents online → paper trading active" },
-  { prompt: "~", cmd: "git log --oneline -3", output: "a3f9e12 feat: RAG pipeline v2 with reranking\n7c1d843 feat: pgvector hybrid search\n2b4a1ef feat: multi-agent orchestration layer" },
+  {
+    prompt: "~",
+    cmd: "cat clearance.txt",
+    output: "DoD Public Trust — Active",
+  },
+  {
+    prompt: "~",
+    cmd: "ls ai-systems/",
+    output: "rag-pipeline/  multi-agent/  vector-search/  llm-orchestration/",
+  },
+  {
+    prompt: "~",
+    cmd: "python run_trading_bot.py",
+    output: "[AI] 10 agents online → paper trading active",
+  },
+  {
+    prompt: "~",
+    cmd: "git log --oneline -3",
+    output:
+      "a3f9e12 feat: RAG pipeline v2 with reranking\n7c1d843 feat: pgvector hybrid search\n2b4a1ef feat: multi-agent orchestration layer",
+  },
 ];
 
 function TerminalWindow() {
@@ -26,10 +43,13 @@ function TerminalWindow() {
 
     // Type the command
     if (typingIndex < line.cmd.length) {
-      const t = setTimeout(() => {
-        setTypedCmd((prev) => prev + line.cmd[typingIndex]);
-        setTypingIndex((i) => i + 1);
-      }, 45 + Math.random() * 35);
+      const t = setTimeout(
+        () => {
+          setTypedCmd((prev) => prev + line.cmd[typingIndex]);
+          setTypingIndex((i) => i + 1);
+        },
+        45 + Math.random() * 35,
+      );
       return () => clearTimeout(t);
     }
 
@@ -71,7 +91,10 @@ function TerminalWindow() {
         <span className="w-3 h-3 rounded-full bg-green-500/70" />
         <span
           className="ml-3 text-xs"
-          style={{ color: "var(--muted)", fontFamily: "var(--font-space-mono)" }}
+          style={{
+            color: "var(--muted)",
+            fontFamily: "var(--font-space-mono)",
+          }}
         >
           muluken@portfolio:~$
         </span>
@@ -80,7 +103,11 @@ function TerminalWindow() {
       {/* Terminal body */}
       <div
         className="p-5 space-y-2 min-h-[280px]"
-        style={{ fontFamily: "var(--font-space-mono)", fontSize: "0.78rem", lineHeight: "1.7" }}
+        style={{
+          fontFamily: "var(--font-space-mono)",
+          fontSize: "0.78rem",
+          lineHeight: "1.7",
+        }}
       >
         {completedLines.map((line, i) => (
           <div key={i}>
@@ -108,7 +135,10 @@ function TerminalWindow() {
             </div>
             {showOutput &&
               currentLine.output.split("\n").map((o, j) => (
-                <div key={j} style={{ color: "#6b7280", paddingLeft: "1.5rem" }}>
+                <div
+                  key={j}
+                  style={{ color: "#6b7280", paddingLeft: "1.5rem" }}
+                >
                   {o}
                 </div>
               ))}
@@ -143,10 +173,7 @@ function StatsTicker() {
       />
       <div className="ticker-inner">
         {doubled.map((stat, i) => (
-          <div
-            key={i}
-            className="flex items-center gap-2 mx-8 shrink-0"
-          >
+          <div key={i} className="flex items-center gap-2 mx-8 shrink-0">
             <span
               className="font-bold text-lg"
               style={{
@@ -159,7 +186,11 @@ function StatsTicker() {
             </span>
             <span
               className="text-sm uppercase tracking-widest"
-              style={{ color: "var(--muted)", fontFamily: "var(--font-space-mono)", fontSize: "0.7rem" }}
+              style={{
+                color: "var(--muted)",
+                fontFamily: "var(--font-space-mono)",
+                fontSize: "0.7rem",
+              }}
             >
               {stat.label}
             </span>
@@ -203,7 +234,8 @@ export default function Hero() {
       <div
         className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%)",
           filter: "blur(40px)",
         }}
         aria-hidden="true"
@@ -236,7 +268,11 @@ export default function Hero() {
               <motion.h1
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.75, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 0.75,
+                  delay: 0.2,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="font-display leading-none"
                 style={{
                   fontFamily: "var(--font-bebas)",
@@ -252,7 +288,11 @@ export default function Hero() {
               <motion.h1
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.75, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 0.75,
+                  delay: 0.3,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="font-display leading-none"
                 style={{
                   fontFamily: "var(--font-bebas)",
@@ -279,7 +319,7 @@ export default function Hero() {
                 Senior AI Software Engineer
               </p>
               <div className="flex flex-wrap items-center gap-2 mt-1">
-                {["DoD Cleared", "9+ Years Federal Contracting"].map((tag) => (
+                {["DoD Cleared", "9+ Years Experience"].map((tag) => (
                   <span
                     key={tag}
                     className="inline-block px-2 py-0.5 text-xs rounded"
@@ -302,14 +342,18 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.55 }}
               className="mt-5 max-w-lg text-base sm:text-lg leading-relaxed"
-              style={{ color: "var(--muted)", fontFamily: "var(--font-dm-sans)" }}
+              style={{
+                color: "var(--muted)",
+                fontFamily: "var(--font-dm-sans)",
+              }}
             >
-              I build AI-powered systems for federal agencies and defense environments —
-              from{" "}
+              I build AI-powered systems for federal agencies and defense
+              environments — from{" "}
               <span style={{ color: "var(--body)", fontWeight: 500 }}>
                 multi-agent architectures and RAG pipelines
               </span>{" "}
-              to mission-critical enterprise platforms serving thousands of military personnel.
+              to mission-critical enterprise platforms serving thousands of
+              military personnel.
             </motion.p>
 
             {/* CTAs */}
@@ -366,19 +410,30 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1.2 }}
               className="mt-4 ml-auto w-fit flex items-center gap-3 px-4 py-3 rounded-xl border"
-              style={{ borderColor: "var(--border)", background: "var(--card)" }}
+              style={{
+                borderColor: "var(--border)",
+                background: "var(--card)",
+              }}
             >
-              <div className="text-2xl" aria-hidden="true">🏛️</div>
+              <div className="text-2xl" aria-hidden="true">
+                🏛️
+              </div>
               <div>
                 <p
                   className="text-xs font-semibold"
-                  style={{ color: "var(--body)", fontFamily: "var(--font-sora)" }}
+                  style={{
+                    color: "var(--body)",
+                    fontFamily: "var(--font-sora)",
+                  }}
                 >
                   Federal AI Engineer
                 </p>
                 <p
                   className="text-xs"
-                  style={{ color: "var(--muted)", fontFamily: "var(--font-space-mono)" }}
+                  style={{
+                    color: "var(--muted)",
+                    fontFamily: "var(--font-space-mono)",
+                  }}
                 >
                   FISMA · RBAC · Zero-Downtime
                 </p>

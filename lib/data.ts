@@ -405,8 +405,10 @@ export const education = [
 export const certifications = [
   {
     name: "AWS Certified Cloud Practitioner",
-    target: "Q2 2026",
-    status: "In Progress",
+    issued: "2026",
+    status: "Earned",
+    badgeId: "17709094-bbcd-4476-aa5b-bf95193eab40",
+    badgeUrl: "https://www.credly.com/badges/17709094-bbcd-4476-aa5b-bf95193eab40/public_url",
   },
   {
     name: "AWS Solutions Architect Associate",

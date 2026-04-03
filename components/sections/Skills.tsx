@@ -134,13 +134,13 @@ export default function Skills() {
               className="font-semibold mb-1"
               style={{ color: "var(--head)", fontFamily: "var(--font-sora)" }}
             >
-              AWS Certified — In Progress
+              AWS Certified Cloud Practitioner
             </p>
             <p
               className="text-sm"
               style={{ color: "var(--muted)" }}
             >
-              Cloud Practitioner (Q2 2026) → Solutions Architect Associate (Q3 2026)
+              Certified · Next: Solutions Architect Associate (Q3 2026)
             </p>
           </div>
           <div
@@ -152,8 +152,8 @@ export default function Skills() {
               border: "1px solid rgba(37,99,235,0.2)",
             }}
           >
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            Certification Track Active
+            <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            AWS Certified
           </div>
         </AnimatedSection>
       </div>
